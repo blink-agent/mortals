@@ -11,7 +11,7 @@ function svg(body, status = 200) {
     status,
     headers: {
       'Content-Type': 'image/svg+xml; charset=utf-8',
-      'Cache-Control': 'no-store',
+      'Cache-Control': 'public, max-age=60',
       ...CORS_HEADERS,
     },
   });

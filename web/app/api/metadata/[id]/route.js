@@ -26,8 +26,9 @@ export async function GET(_req, { params }) {
   const dead = (await soft(() => c.mortals.isDead(id), false)) === true;
   const image = `${SITE_URL}/api/image/${id}`;
 
-  // Status can flip on any block — never let a CDN pin it.
-  const headers = { 'Cache-Control': 'no-store' };
+  // Status can flip on any block, but a 60s window is fine — and indexers
+  // (Blockscout, OpenSea) deprioritize uncacheable metadata.
+  const headers = { 'Cache-Control': 'public, max-age=60' };
 
   if (dead) {
     return json(

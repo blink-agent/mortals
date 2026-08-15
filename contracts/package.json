@@ -1,0 +1,24 @@
+{
+  "name": "mortals-contracts",
+  "version": "1.0.0",
+  "description": "MORTALS — NFT game contracts for Robinhood Chain (4663)",
+  "private": true,
+  "scripts": {
+    "build": "hardhat compile",
+    "test": "hardhat test",
+    "gas": "REPORT_GAS=true hardhat test",
+    "size": "hardhat compile && node scripts/size.js",
+    "deploy": "hardhat run scripts/deploy.js --network robinhood",
+    "verify": "hardhat run scripts/verify.js --network robinhood"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^17.4.2",
+    "hardhat": "^2.29.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0.2",
+    "erc721a": "^4.3.0"
+  }
+}

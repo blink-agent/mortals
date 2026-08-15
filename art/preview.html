@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>MORTALS — soul sigil preview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: #050507;
+    color: #ddd;
+    font-family: ui-monospace, "SF Mono", "Courier New", monospace;
+  }
+  h1 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+    color: #eee;
+  }
+  p.sub {
+    margin: 0 0 24px;
+    color: #888;
+    font-size: 13px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 6px;
+    max-width: 1100px;
+  }
+  .cell {
+    background: #0a0a0f;
+    border: 1px solid #1c1c22;
+    border-radius: 4px;
+    padding: 6px;
+    text-align: center;
+  }
+  .cell img { width: 100%; display: block; image-rendering: pixelated; border-radius: 2px; }
+  .cell .id { font-size: 10px; color: #666; margin-top: 4px; }
+  .dead-row {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .dead-row .cell { padding: 8px; }
+  section + section { margin-top: 40px; }
+</style>
+</head>
+<body>
+  <h1>MORTALS — soul sigils</h1>
+  <p class="sub">100 deterministic previews (salt = "preview", tokenId 1..100) + 2 dead examples. Generated client-side from sigil.mjs.</p>
+
+  <section>
+    <div class="grid" id="alive-grid"></div>
+  </section>
+
+  <section>
+    <h1 style="margin-top:0">Dead examples</h1>
+    <div class="dead-row" id="dead-grid"></div>
+  </section>
+
+  <script type="module">
+    import { generateSigil, deadSvg } from "./sigil.mjs";
+
+    const aliveGrid = document.getElementById("alive-grid");
+    const frag = document.createDocumentFragment();
+    for (let id = 1; id <= 100; id++) {
+      const { svg } = generateSigil(id, "preview");
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      const blob = new Blob([svg], { type: "image/svg+xml" });
+      const url = URL.createObjectURL(blob);
+      cell.innerHTML = `<img src="${url}" alt="MORTAL #${id} sigil" /><div class="id">#${id}</div>`;
+      frag.appendChild(cell);
+    }
+    aliveGrid.appendChild(frag);
+
+    const deadGrid = document.getElementById("dead-grid");
+    for (const id of [13, 666]) {
+      const svg = deadSvg(id);
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      const blob = new Blob([svg], { type: "image/svg+xml" });
+      const url = URL.createObjectURL(blob);
+      cell.innerHTML = `<img src="${url}" alt="MORTAL #${id} dead" /><div class="id">#${id} — DEAD</div>`;
+      deadGrid.appendChild(cell);
+    }
+  </script>
+</body>
+</html>

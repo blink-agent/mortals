@@ -1,0 +1,17 @@
+{
+  "name": "mortals-art",
+  "version": "1.0.0",
+  "description": "Deterministic pixel-art soul sigil generator for MORTALS. sigil.mjs itself has zero dependencies; sharp below is dev-only, used by render-samples.mjs for optional PNG previews.",
+  "type": "module",
+  "main": "sigil.mjs",
+  "scripts": {
+    "render": "node render-samples.mjs",
+    "distribution": "node trait-distribution.mjs"
+  },
+  "keywords": ["mortals", "nft", "pixel-art", "generative"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}

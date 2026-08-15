@@ -1,0 +1,42 @@
+{
+  "network": "robinhood",
+  "chainId": 4663,
+  "deployer": "0xF0317a4A8a291B1C28A9aaB0C2d238C07203a89D",
+  "signer": "0x0626C12E71CD360C4aCA4a32217410B4285021EA",
+  "payout": "0xF0317a4A8a291B1C28A9aaB0C2d238C07203a89D",
+  "operator": "0xF0317a4A8a291B1C28A9aaB0C2d238C07203a89D",
+  "baseURI": "https://themortals.vercel.app/api/metadata/",
+  "contractURI": "https://themortals.vercel.app/api/contract",
+  "timestamp": "2026-08-15T09:40:04.080Z",
+  "contracts": {
+    "Soul": "0xE79205BdF8332fA9a9F3b062Bb83c1d6C09DbB11",
+    "Mortals": "0xB20Ff5D5126A291e4Ab9960fbAe9Ca10Bf577954",
+    "Staking": "0x02f9e835E9E7B02f958f9CCB47590d66c3A783a9",
+    "Game": "0x24d9f401C5DCB6ffC62391eD4E41eE54b4Cdec49",
+    "Chat": "0x9C716BF0515cb5E108AdC8074c822cbC8EB7Db4b"
+  },
+  "constructorArgs": {
+    "Soul": [],
+    "Mortals": [
+      "0x0626C12E71CD360C4aCA4a32217410B4285021EA",
+      "0xF0317a4A8a291B1C28A9aaB0C2d238C07203a89D",
+      "https://themortals.vercel.app/api/metadata/",
+      "https://themortals.vercel.app/api/contract"
+    ],
+    "Staking": [
+      "0xB20Ff5D5126A291e4Ab9960fbAe9Ca10Bf577954",
+      "0xE79205BdF8332fA9a9F3b062Bb83c1d6C09DbB11"
+    ],
+    "Game": [
+      "0xB20Ff5D5126A291e4Ab9960fbAe9Ca10Bf577954",
+      "0xE79205BdF8332fA9a9F3b062Bb83c1d6C09DbB11",
+      "0x02f9e835E9E7B02f958f9CCB47590d66c3A783a9",
+      "0xF0317a4A8a291B1C28A9aaB0C2d238C07203a89D"
+    ],
+    "Chat": [
+      "0xB20Ff5D5126A291e4Ab9960fbAe9Ca10Bf577954",
+      "0x02f9e835E9E7B02f958f9CCB47590d66c3A783a9",
+      "0xF0317a4A8a291B1C28A9aaB0C2d238C07203a89D"
+    ]
+  }
+}

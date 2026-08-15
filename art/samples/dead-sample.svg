@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <title>MORTAL #9999 — DEAD</title>
+  <rect x="0" y="0" width="480" height="480" fill="#000000"/>
+  <g font-family="'Courier New', ui-monospace, monospace" text-anchor="middle" fill="#ffffff">
+    <text x="240" y="220" font-size="34" font-weight="700" letter-spacing="2">YOU'VE</text>
+    <text x="240" y="262" font-size="34" font-weight="700" letter-spacing="2">BEEN KILLED</text>
+    <text x="240" y="320" font-size="16" fill="#8a1414" letter-spacing="3">MORTAL #9999</text>
+  </g>
+  <rect x="0" y="0" width="480" height="480" fill="none" stroke="#1a0000" stroke-width="6"/>
+</svg>

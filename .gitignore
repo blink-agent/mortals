@@ -1,0 +1,13 @@
+walletkey
+verceltoken
+githubtoken
+secrets/
+node_modules/
+.next/
+.vercel/
+artifacts/
+cache/
+.env
+.env.*
+!.env.example
+*.log
